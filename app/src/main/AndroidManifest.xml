@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cc.xiaobaicz.apkmanager">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:name="cc.xiaobaicz.apkmanager.App"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="${AppName}"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ApkManager" >
+
+        <activity android:name="cc.xiaobaicz.apkmanager.AppActivity" android:screenOrientation="portrait"/>
+
+        <activity-alias android:name="Main" android:targetActivity="cc.xiaobaicz.apkmanager.AppActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias android:name="VIEW" android:targetActivity="cc.xiaobaicz.apkmanager.AppActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+
+    </application>
+
+</manifest>

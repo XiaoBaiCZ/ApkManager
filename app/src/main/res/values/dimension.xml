@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  过场动画时长/毫秒  -->
+    <integer name="transition_duration">233</integer>
+    
+</resources>

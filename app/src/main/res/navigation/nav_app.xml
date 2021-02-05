@@ -21,6 +21,19 @@
         tools:layout="@layout/fragment_main"
         android:id="@+id/mainFragment"
         android:name="cc.xiaobaicz.apkmanager.fragment.MainFragment"
-        android:label="MainFragment" />
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_pkgInfoFragment"
+            app:destination="@id/pkgInfoFragment"
+            app:enterAnim="@anim/cover_in"
+            app:exitAnim="@anim/cover_out"
+            app:popEnterAnim="@anim/pop_cover_in"
+            app:popExitAnim="@anim/pop_cover_out" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_pkg_info"
+        android:id="@+id/pkgInfoFragment"
+        android:name="cc.xiaobaicz.apkmanager.fragment.PkgInfoFragment"
+        android:label="PkgInfoFragment" />
 
 </navigation>

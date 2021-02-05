@@ -2,6 +2,6 @@
 <resources>
 
     <!--  过场动画时长/毫秒  -->
-    <integer name="transition_duration">233</integer>
+    <integer name="transition_duration">366</integer>
     
 </resources>

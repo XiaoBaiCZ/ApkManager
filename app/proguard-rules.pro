@@ -23,6 +23,9 @@
 # 实体类
 -keep class cc.xiaobaicz.apkmanager.entity.** { *; }
 
+# RecycleView扩展
+-keep class * extends androidx.recyclerview.widget.RecyclerView$ViewHolder { *; }
+
 # Gson
 -keepattributes Signature
 -keepattributes *Annotation*

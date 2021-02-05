@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">APK 管理器</string>
+    <string name="apk_icon">Apk 图标</string>
+    <string name="pkg_info">APK 信息</string>
 </resources>

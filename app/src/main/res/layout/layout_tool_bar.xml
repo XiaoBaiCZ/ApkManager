@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="toolBar" type="cc.xiaobaicz.apkmanager.entity.ToolBar" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/toolbar_bg"
+        android:translationZ="8dp"
+        app:auto_height="@{toolBar}">
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="@{toolBar.isVisibleL}"
+            android:padding="12dp"
+            android:src="@{toolBar.iconL}"
+            android:onClick="@{toolBar::onClickL}"
+            tools:src="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{toolBar.title}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textStyle="bold"
+            android:textColor="@color/tool_bar_title"
+            android:textSize="20sp"
+            tools:text="Title"/>
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="@{toolBar.isVisibleR}"
+            android:padding="12dp"
+            app:resId="@{toolBar.iconR}"
+            android:onClick="@{toolBar::onClickR}"
+            tools:src="@mipmap/ic_launcher"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

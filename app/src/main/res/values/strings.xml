@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">APK Manager</string>
+    <string name="apk_icon">Apk Icon</string>
+    <string name="pkg_info">APK Info</string>
 </resources>

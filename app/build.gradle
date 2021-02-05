@@ -23,7 +23,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "cc.xiaobaicz.template"
+        applicationId "cc.xiaobaicz.apkmanager"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
@@ -44,6 +44,7 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.keystore_internal
+            debuggable true
         }
         release {
             minifyEnabled true
@@ -58,7 +59,7 @@ android {
         //内部测试
         internal {
             dimension "app"
-            applicationId "cc.xiaobaicz.template.internal"
+            applicationId "cc.xiaobaicz.apkmanager.internal"
             manifestPlaceholders = [AppName: "APK Manager-Internal"]
             buildConfigField "String", "URL", '"http://127.0.0.1"'
         }
@@ -98,6 +99,9 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    implementation 'com.github.XiaoBaiCZ:RecyclerViewExtend:0.5.1'
 
     //JetPack
     //lifecycle

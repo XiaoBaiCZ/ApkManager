@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
+        <import type="cc.xiaobaicz.apkmanager.util.MessageDigestKt"/>
         <variable name="model" type="cc.xiaobaicz.apkmanager.viewmodel.PkgInfoViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -9,8 +11,93 @@
         android:layout_height="match_parent"
         android:background="@color/bg">
 
-        <include layout="@layout/layout_tool_bar"
-            app:toolBar="@{model.toolBar}"/>
+        <include
+            android:id="@+id/include"
+            layout="@layout/layout_tool_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:toolBar="@{model.toolBar}" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <ImageView
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_gravity="center_horizontal"
+                    app:pkg_icon="@{model.pkg}"
+                    tools:src="@mipmap/ic_launcher"
+                    android:contentDescription="@string/apk_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/theme"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:apk_name="@{model.pkg}"
+                    tools:text="APK Name"/>
+
+                <TextView
+                    style="@style/pkg_info_lab"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/lab_pkg"
+                    tools:text="pkg:"/>
+
+                <TextView
+                    style="@style/pkg_info_lab_val"
+                    android:text="@{model.pkg.packageName}"
+                    tools:text="pkg:"/>
+
+                <TextView
+                    style="@style/pkg_info_lab"
+                    android:text="@string/lab_md5"
+                    tools:text="md5:" />
+
+                <TextView
+                    style="@style/pkg_info_lab_val"
+                    android:text="@{MessageDigestKt.md5(model.pkg.signatures[0].toByteArray())}"
+                    tools:text="md5:" />
+
+                <TextView
+                    style="@style/pkg_info_lab"
+                    android:text="@string/lab_sha1"
+                    tools:text="sha1:"/>
+
+                <TextView
+                    style="@style/pkg_info_lab_val"
+                    android:text="@{MessageDigestKt.sha1(model.pkg.signatures[0].toByteArray())}"
+                    tools:text="sha1:"/>
+
+                <TextView
+                    style="@style/pkg_info_lab"
+                    android:text="@string/lab_sha256"
+                    tools:text="sha256:"/>
+
+                <TextView
+                    style="@style/pkg_info_lab_val"
+                    android:text="@{MessageDigestKt.sha256(model.pkg.signatures[0].toByteArray())}"
+                    tools:text="sha256:"/>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

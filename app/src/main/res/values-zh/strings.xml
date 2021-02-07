@@ -3,4 +3,10 @@
     <string name="app_name">APK 管理器</string>
     <string name="apk_icon">Apk 图标</string>
     <string name="pkg_info">APK 信息</string>
+    <string name="not_found_apk_info">暂无 APK 信息</string>
+    <string name="press_again_to_exit">再按一次退出</string>
+    <string name="lab_pkg">包名:&#160;</string>
+    <string name="lab_md5">MD5:&#160;</string>
+    <string name="lab_sha1">SHA-1:&#160;</string>
+    <string name="lab_sha256">SHA-256:&#160;</string>
 </resources>

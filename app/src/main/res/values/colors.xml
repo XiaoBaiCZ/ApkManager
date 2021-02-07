@@ -11,6 +11,8 @@
     <color name="bg">#eeeeee</color>
     <color name="toolbar_bg">#ffffff</color>
     <color name="item_apk_pkg">#666666</color>
+    <color name="item_apk_lab">#333333</color>
     <color name="item_apk_name">#333333</color>
     <color name="tool_bar_title">#333333</color>
+    <color name="theme">#1afa29</color>
 </resources>

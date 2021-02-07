@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import cc.xiaobaicz.apkmanager.R
 import cc.xiaobaicz.apkmanager.databinding.FragmentPkgInfoBinding
 import cc.xiaobaicz.apkmanager.global.KEY_PKG_INFO
 import cc.xiaobaicz.apkmanager.viewmodel.PkgInfoViewModel
@@ -29,11 +30,21 @@ class PkgInfoFragment : BaseFragment() {
         bind.model = model
         bind.lifecycleOwner = this
 
-        arguments?.apply {
-            println(getParcelable<PackageInfo>(KEY_PKG_INFO))
+        val info = arguments?.getParcelable<PackageInfo>(KEY_PKG_INFO)
+        if (info == null) {
+            showPkgNotFound()
+            return
         }
+        model.pkg = info
 
         model.configToolBar(requireActivity())
+
+
+
+    }
+
+    private fun showPkgNotFound() {
+        iToast?.makeToast(getString(R.string.not_found_apk_info))?.show()
     }
 
 }

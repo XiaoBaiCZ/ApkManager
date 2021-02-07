@@ -21,7 +21,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:visibility="@{toolBar.isVisibleL}"
             android:padding="12dp"
-            android:src="@{toolBar.iconL}"
+            app:res_id="@{toolBar.iconL}"
             android:onClick="@{toolBar::onClickL}"
             tools:src="@mipmap/ic_launcher"/>
 
@@ -46,7 +46,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:visibility="@{toolBar.isVisibleR}"
             android:padding="12dp"
-            app:resId="@{toolBar.iconR}"
+            app:res_id="@{toolBar.iconR}"
             android:onClick="@{toolBar::onClickR}"
             tools:src="@mipmap/ic_launcher"/>
 

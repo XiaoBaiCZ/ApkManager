@@ -3,4 +3,10 @@
     <string name="app_name">APK Manager</string>
     <string name="apk_icon">Apk Icon</string>
     <string name="pkg_info">APK Info</string>
+    <string name="not_found_apk_info">No APK information found</string>
+    <string name="press_again_to_exit">Press again to exit</string>
+    <string name="lab_pkg">PackageName:&#160;</string>
+    <string name="lab_md5">MD5:&#160;</string>
+    <string name="lab_sha1">SHA-1:&#160;</string>
+    <string name="lab_sha256">SHA-256:&#160;</string>
 </resources>

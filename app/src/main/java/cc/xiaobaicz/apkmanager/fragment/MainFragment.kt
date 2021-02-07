@@ -99,7 +99,7 @@ class MainFragment : BaseFragment() {
                 return
             }
             time = SystemClock.elapsedRealtime()
-            iToast?.makeToast("再按一次退出")?.show()
+            iToast?.makeToast(getString(R.string.press_again_to_exit))?.show()
         }
     }
 

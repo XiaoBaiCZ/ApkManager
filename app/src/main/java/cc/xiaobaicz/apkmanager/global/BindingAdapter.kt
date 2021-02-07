@@ -10,12 +10,12 @@ import cc.xiaobaicz.apkmanager.GlideApp
 import cc.xiaobaicz.apkmanager.entity.ToolBar
 import cc.xiaobaicz.apkmanager.util.dp
 
-@BindingAdapter("app:src")
+@BindingAdapter("app:pkg_icon")
 fun bindImage(view: ImageView, info: PackageInfo) {
     GlideApp.with(view).load(info.applicationInfo.loadIcon(view.context.packageManager)).into(view)
 }
 
-@BindingAdapter("app:text")
+@BindingAdapter("app:apk_name")
 fun bindText(view: TextView, info: PackageInfo) {
     val label = info.applicationInfo.loadLabel(view.context.packageManager)
     view.text = label
@@ -28,7 +28,7 @@ fun bindAutoHeight(view: View, toolBar: ToolBar?) {
     view.layoutParams.height = (toolBar.sysUITop + 56.dp).toInt()
 }
 
-@BindingAdapter("app:resId")
+@BindingAdapter("app:res_id")
 fun bindImageViewSrc(view: ImageView, resId: Int) {
     view.setImageResource(resId)
 }

@@ -73,7 +73,7 @@ class MainViewModel : BaseViewModel() {
             pm ?: return@launch
             //异步查找数据
             val old = ArrayList(packageInfos)
-            val res = pm.getInstalledPackages(0).filter {
+            val res = pm.getInstalledPackages(PackageManager.GET_SIGNATURES).filter {
                 return@filter isShowSysApk() || (it.applicationInfo.flags and ApplicationInfo.FLAG_SYSTEM) == 0
             }
             withContext(Dispatchers.Main) {

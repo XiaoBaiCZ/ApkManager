@@ -22,6 +22,9 @@ class ToolBar {
     var onClickL: View.OnClickListener? = null
     var onClickR: View.OnClickListener? = null
 
+    var isSelectedL = false
+    var isSelectedR = false
+
     fun onClickL(view: View) {
         onClickL?.onClick(view)
     }

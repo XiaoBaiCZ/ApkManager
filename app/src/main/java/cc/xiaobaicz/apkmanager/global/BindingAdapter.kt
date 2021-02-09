@@ -32,3 +32,8 @@ fun bindAutoHeight(view: View, toolBar: ToolBar?) {
 fun bindImageViewSrc(view: ImageView, resId: Int) {
     view.setImageResource(resId)
 }
+
+@BindingAdapter("app:selected")
+fun bindViewSeeleced(view: View, selected: Boolean) {
+    view.isSelected = selected
+}

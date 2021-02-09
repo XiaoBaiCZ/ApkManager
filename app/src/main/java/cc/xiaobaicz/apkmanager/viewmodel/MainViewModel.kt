@@ -10,8 +10,10 @@ import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.DiffUtil
 import cc.xiaobaicz.apkmanager.R
 import cc.xiaobaicz.apkmanager.entity.ToolBar
+import cc.xiaobaicz.apkmanager.global.KEY_IS_SHOW_SYS_APK
 import cc.xiaobaicz.apkmanager.util.dp
 import cc.xiaobaicz.apkmanager.util.sysUiSize
+import com.tencent.mmkv.MMKV
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.suspendCancellableCoroutine
@@ -32,7 +34,7 @@ class MainViewModel : BaseViewModel() {
     val toolBar = MutableLiveData<ToolBar>()
 
     //系统Apk
-    val isShowSysApk = MutableLiveData(false)
+    val isShowSysApk = MutableLiveData(MMKV.defaultMMKV()?.decodeBool(KEY_IS_SHOW_SYS_APK, false) ?: false)
 
     private fun isShowSysApk() = isShowSysApk.value ?: false
 
@@ -46,7 +48,9 @@ class MainViewModel : BaseViewModel() {
                 height = t.toFloat() + 56.dp
                 iconR = R.drawable.ic_system_56
                 isVisibleR = View.VISIBLE
+                isSelectedR = isShowSysApk()
                 onClickR = View.OnClickListener {
+                    MMKV.defaultMMKV()?.encode(KEY_IS_SHOW_SYS_APK, !isShowSysApk())
                     isShowSysApk.value = !isShowSysApk()
                     it.isSelected = isShowSysApk()
                 }

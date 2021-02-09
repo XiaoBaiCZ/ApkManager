@@ -22,6 +22,7 @@
             android:visibility="@{toolBar.isVisibleL}"
             android:padding="12dp"
             app:res_id="@{toolBar.iconL}"
+            app:selected="@{toolBar.isSelectedL}"
             android:onClick="@{toolBar::onClickL}"
             tools:src="@mipmap/ic_launcher"/>
 
@@ -47,6 +48,7 @@
             android:visibility="@{toolBar.isVisibleR}"
             android:padding="12dp"
             app:res_id="@{toolBar.iconR}"
+            app:selected="@{toolBar.isSelectedR}"
             android:onClick="@{toolBar::onClickR}"
             tools:src="@mipmap/ic_launcher"/>
 

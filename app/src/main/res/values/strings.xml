@@ -9,4 +9,7 @@
     <string name="lab_md5">MD5:&#160;</string>
     <string name="lab_sha1">SHA-1:&#160;</string>
     <string name="lab_sha256">SHA-256:&#160;</string>
+    <string name="export">Export</string>
+    <string name="uninstall">Uninstall</string>
+    <string name="cancel">Cancel</string>
 </resources>

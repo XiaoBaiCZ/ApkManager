@@ -1,7 +1,6 @@
 package cc.xiaobaicz.apkmanager.entity
 
 import android.view.View
-import cc.xiaobaicz.apkmanager.util.dp
 
 /**
  * 工具栏配置信息

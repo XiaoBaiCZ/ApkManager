@@ -9,9 +9,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import cc.xiaobaicz.apkmanager.R
 import cc.xiaobaicz.apkmanager.databinding.FragmentSplashBinding
-import cc.xiaobaicz.apkmanager.util.fullScreen
-import cc.xiaobaicz.apkmanager.util.transparentScreen
-import cc.xiaobaicz.apkmanager.util.transparentStatusBar
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

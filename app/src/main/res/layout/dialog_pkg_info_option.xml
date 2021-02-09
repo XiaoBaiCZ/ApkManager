@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="option" type="cc.xiaobaicz.apkmanager.fragment.PkgInfoOptionDialogFragment.IOption" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:clipToPadding="false"
+        android:padding="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/item_pkg_info_option"
+            android:backgroundTint="#f00"
+            android:textColor="#fff"
+            android:text="@string/uninstall"
+            android:onClick="@{option::onUninstall}"/>
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/item_pkg_info_option"
+            android:text="@string/export"
+            android:onClick="@{option::onExport}"/>
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/item_pkg_info_option"
+            android:text="@string/cancel"
+            android:onClick="@{option::onCancel}" />
+
+    </LinearLayout>
+</layout>
